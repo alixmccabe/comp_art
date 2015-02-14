@@ -1,0 +1,29 @@
+Alix McCabe
+
+Example 1 (Title: The Deep):
+Red: ['cos_pi', ['cos_pi', ['cubed', ['bound_log', ['sin_pi', ['cubed', ['prod', ['cos_pi', ['cos_pi', ['y']]], ['bound_log', ['avg', ['y'], ['y']]]]]]]]]]
+
+Green: ['sin_pi', ['prod', ['cos_pi', ['bound_log', ['prod', ['cubed', ['cubed', ['avg', ['sin_pi', ['x']], ['prod', ['y'], ['x']]]]], ['sin_pi', ['bound_log', ['bound_log', ['cubed', ['x']]]]]]]], ['sin_pi', ['cos_pi', ['bound_log', ['cubed', ['sin_pi', ['avg', ['x'], ['avg', ['y'], ['x']]]]]]]]]]
+
+Blue: ['bound_log', ['sin_pi', ['cos_pi', ['cos_pi', ['bound_log', ['cubed', ['cubed', ['avg', ['x'], ['prod', ['x'], ['x']]]]]]]]]]
+
+This piece is meant to juxtapose volatility and predictability by incorporating linear shapes with seemingly random interjections of value. I was primarily inspired by the ocean to create this piece: the tide goes in and out every day in seemingly predictable ways, yet this consistency is the product of a series of completely unique waves, each ebbing and flowing differently than the last to form the same tidal patterns day after day.
+
+
+Example 2 (Title: Orange Fields):
+Red: ['cos_pi', ['prod', ['cubed', ['prod', ['bound_log', ['sin_pi', ['cos_pi', ['sin_pi', ['x']]]]], ['bound_log', ['sin_pi', ['prod', ['x'], ['cubed', ['cos_pi', ['x']]]]]]]], ['sin_pi', ['cos_pi', ['bound_log', ['cubed', ['bound_log', ['avg', ['cubed', ['x']], ['x']]]]]]]]]
+
+Green: ['sin_pi', ['bound_log', ['bound_log', ['bound_log', ['cubed', ['bound_log', ['cos_pi', ['avg', ['cubed', ['y']], ['avg', ['y'], ['x']]]]]]]]]]
+
+Blue: ['cos_pi', ['cos_pi', ['bound_log', ['prod', ['prod', ['bound_log', ['prod', ['x'], ['cubed', ['sin_pi', ['x']]]]], ['cubed', ['sin_pi', ['sin_pi', ['cos_pi', ['y']]]]]], ['bound_log', ['cos_pi', ['bound_log', ['avg', ['cubed', ['x']], ['avg', ['x'], ['x']]]]]]]]]]
+
+This piece is inspired by feelings of place in the grand scale of the world. We are each less significant than a grain of wheat in a field, yet within the field we must exist, and take meaning from the small roles that we play. If you look generally at "Orange Fields", you may become visually confused: lost in the assortment of colors and shapes, but when you look closely, you can come to appreciate the individual shifts in the artwork, as we must come to appreciate the individuals - and ourselves - that exist in our lives.
+
+Example 3 (Title: Curtailed):
+['prod', ['sin_pi', ['bound_log', ['bound_log', ['bound_log', ['bound_log', ['sin_pi', ['prod', ['bound_log', ['y']], ['prod', ['x'], ['x']]]]]]]]], ['cubed', ['cos_pi', ['prod', ['cubed', ['bound_log', ['sin_pi', ['cos_pi', ['avg', ['x'], ['x']]]]]], ['cos_pi', ['cubed', ['cubed', ['cos_pi', ['cos_pi', ['x']]]]]]]]]]
+
+['cubed', ['sin_pi', ['prod', ['prod', ['cos_pi', ['sin_pi', ['cubed', ['avg', ['cubed', ['x']], ['prod', ['y'], ['x']]]]]], ['prod', ['prod', ['cos_pi', ['x']], ['cubed', ['cos_pi', ['cos_pi', ['x']]]]], ['cubed', ['cos_pi', ['cos_pi', ['cubed', ['y']]]]]]], ['cos_pi', ['cos_pi', ['sin_pi', ['cubed', ['prod', ['avg', ['x'], ['x']], ['cubed', ['y']]]]]]]]]]
+
+['cos_pi', ['sin_pi', ['cos_pi', ['prod', ['cubed', ['cos_pi', ['cubed', ['avg', ['avg', ['x'], ['y']], ['avg', ['x'], ['y']]]]]], ['cos_pi', ['cos_pi', ['cos_pi', ['cos_pi', ['cos_pi', ['x']]]]]]]]]]
+
+"Curtailed" is a piece meant to evoke the feelings of loss in the viewer. The green patterns demonstrate the cyclical nature of grief: the process of loss, fear, sadness, and anger that one must spiral through before reaching acceptance. The purple background that is more linear is meant to represent the societal scaffolding that keeps our lives in place while we're reeling from grief. It's meant to make the viewer feel more opressed that supported, as society often curtails our ability to express our feelings and process them adequately. Extended grieving is so often viewed as weakness, we feel pressured to suppress our feelings until they become the dark undertones of our daily lives.
