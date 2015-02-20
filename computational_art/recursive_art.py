@@ -16,11 +16,12 @@ def build_random_function(min_depth, max_depth):
                  (see assignment writeup for details on the representation of
                  these functions)
     """
-    #case 1: you're building a function not with x and y, the mas and min are both positive
+    #case 1: you're building a function not with x and y, the max and min are both positive
     #case 2: min is below zero, you can stop with x or y, or use anything
     #case 3: max and min are below zero must stop with x or y
     
     list_functions = ["cos_pi","sin_pi","cubed","bound_log","prod","avg","x","y"]
+
 
     import random
     import math_functions
@@ -52,6 +53,8 @@ def build_random_function(min_depth, max_depth):
     else:
 
         return[list_functions[index]]
+
+
 
 def evaluate_random_function(f, x, y):
     """ Evaluate the random function f with inputs x,y
@@ -233,11 +236,11 @@ def generate_art(filename, x_size=700, y_size=350):
 
     # Functions for red, green, and blue channels - where the magic happens!
 
-    red_function = build_random_function(3,2)
+    red_function = build_random_function(7,9)
     print red_function
-    green_function = build_random_function(2,4)
+    green_function = build_random_function(7,9)
     print green_function
-    blue_function = build_random_function(3,3) 
+    blue_function = build_random_function(7,9) 
     print blue_function
 
     # Create image and loop over all pixels

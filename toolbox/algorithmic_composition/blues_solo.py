@@ -22,15 +22,27 @@ def add_note(out, instr, key_num, duration, bpm, volume):
 # this controls the sample rate for the sound file you will generate
 sampling_rate = 44100.0
 Wavefile.setDefaults(sampling_rate, 16)
-
-bass = GuitarBass(sampling_rate)	# use a guitar bass as the instrument
+bass = GuitarBass(sampling_rate)	# use a guitar bass as the first instrument
 solo = AudioStream(sampling_rate, 1)
 
 """ these are the piano key numbers for a 3 octave blues scale in A
 	See: http://en.wikipedia.org/wiki/Blues_scale """
 blues_scale = [25, 28, 30, 31, 32, 35, 37, 40, 42, 43, 44, 47, 49, 52, 54, 55, 56, 59, 61]
-beats_per_minute = 45				# Let's make a slow blues solo
+beats_per_minute = 200				# Let's make a fast blues solo
 
-add_note(solo, bass, blues_scale[0], 1.0, beats_per_minute, 1.0)
+#making a blues solo for the bass guitar
+#two licks were added for super-funkyness
+licks = [ [ [1,0.5], [1,0.5*1.1], [1, 0.5*2.9], [1, 0.5] ],[ [1,0.5], [-1,0.5*2.9], [1, 0.5], [-1, 0.5*1.1] ],[ [1,0.5*2], [1,0.5*1.1], [1, 0.5*2.9], [-1, 0.5] ,[1,0.5],[-1,0.5*0.9]] ]
+for i in licks:
+    #the second lick generally sounds good as an ending to a series of random licks
+    lick = choice(licks) + choice(licks) + choice(licks) + licks[2]
+    curr_note = 0
 
-solo >> "blues_solo.wav"
+    for note in lick:
+        if curr_note >= 0 and curr_note < len(blues_scale)-1:
+            curr_note += note[0]
+            add_note(solo, bass, blues_scale[curr_note], note[1], beats_per_minute, 1.0)
+        else:
+            curr_note += note[0]
+
+solo >> "blues_solo4.wav"
