@@ -11,7 +11,7 @@ def get_word_list(file_name):
 	"""
 	f = open(file_name,'r')
     	lines_in_text = f.readlines()
-
+    	print lines_in_text
     	lines = list(str(lines_in_text).split())
     
     #to keep track of the line index while using the list of lines
