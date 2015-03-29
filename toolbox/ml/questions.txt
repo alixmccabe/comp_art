@@ -1,0 +1,7 @@
+1. The general trend is upwards. This makes a lot of sense, since, if we train the program with more information, it will be able to synthesize information more accurately.
+
+2. Actually, yes. After a couple of runs, the middle part of the curve is consistently noisier than other parts of the curve. Perhaps this is because these percentage points are comparable in machine learning, and vary among similar accuracy points.
+
+3. Probably more than ten. 100 trials doesn't yield a smooth curve, and 200 (takes a very long time to run) and still does not yield a smooth curve, though it is much smoother. If I wasn't worried about completing this toolbox in a timely manner, I would try doing 1000 trials, which would probably be pretty close to perfectly smooth. 
+
+4. As C increases, the curve becomes horizontal (though there's an extreme amount of noise). As C decreases, the curve becomes more differentiated than horizontal, dropping off particularly at the left-hand side. 
