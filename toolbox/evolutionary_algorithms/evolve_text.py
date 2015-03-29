@@ -92,8 +92,22 @@ class Message(list):
 # Genetic operators
 #-----------------------------------------------------------------------------
 
-# TODO: Implement levenshtein_distance function (see Day 9 in-class exercises)
-# HINT: Now would be a great time to implement memoization if you haven't
+lev_dis = {}
+def levenshtein_distance(s1,s2):
+    """ Computes the Levenshtein distance between two input strings """
+    if len(s1) == 0:
+        return len(s2)
+
+    if len(s2) == 0:
+        return len(s1)
+
+    if (s1,s2) in lev_dis:
+        return lev_dis[(s1,s2)]
+
+    else:
+        lev_dis[(s1,s2)] = min([int(s1[0] != s2[0]) + levenshtein_distance(s1[1:],s2[1:]), 1+levenshtein_distance(s1[1:],s2), 1+levenshtein_distance(s1,s2[1:])])
+
+        return lev_dis[s1,s2]
 
 def evaluate_text(message, goal_text, verbose=VERBOSE):
     """
@@ -119,18 +133,37 @@ def mutate_text(message, prob_ins=0.05, prob_del=0.05, prob_sub=0.05):
         Substitution:   Replace one character of the Message with a random
                         (legal) character
     """
-
     if random.random() < prob_ins:
-        # TODO: Implement insertion-type mutation
-        pass
+        index = random.randint(0,len(message)-1)
+        print "in inserting random thing"
+        print message[0:index]
+        message.insert(index,random.choice(string.letters))
 
-    # TODO: Also implement deletion and substitution mutations
-    # HINT: Message objects inherit from list, so they also inherit
-    #       useful list methods
-    # HINT: You probably want to use the VALID_CHARS global variable
+        return (message, )
 
+    if random.random() < prob_del:
+        index = random.randint(0,len(message)-1)
+        print "in del random thing"
+        print message[0:index]
+        message.pop(index)
+
+        return (message, )
+
+
+    if random.random() < prob_sub:
+        print "in sub random thing"
+        index = random.randint(0,len(message)-1)
+        submessage = message[index]
+
+        print "message[index] is", message[index]
+        message.pop(index) 
+
+        message.insert(index,random.choice(string.letters))
+        return (message, )
+
+
+    print "message is ", message
     return (message, )   # Length 1 tuple, required by DEAP
-
 
 #-----------------------------------------------------------------------------
 # DEAP Toolbox and Algorithm setup

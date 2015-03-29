@@ -1,0 +1,13 @@
+lev_dis = {}
+def levenshtein_distance(s1,s2):
+	""" Computes the Levenshtein distance between two input strings """
+	if len(s1) == 0:
+    	return len(s2)
+    if len(s2) == 0:    
+        return len(s1)
+    if not s1,s2 in lev_dis:
+    lev_dis[s1,s2] = min([int(s1[0] != s2[0]) + levenshtein_distance(s1[1:],s2[1:]), 1+levenshtein_distance(s1[1:],s2), 1+levenshtein_distance(s1,s2[1:])])
+
+    return lev_dis[s1,s2]
+
+print levenshtein_distance('kitten','sitting')

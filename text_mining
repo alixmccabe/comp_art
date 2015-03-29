@@ -1,0 +1,10 @@
+import pattern
+
+def text_mining():
+
+def data_search(query):
+	from patten.web import *
+	g = Google()
+	for result in g.serch('query')
+		print result.url
+		print result.text

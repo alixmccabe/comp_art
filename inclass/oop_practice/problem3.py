@@ -42,7 +42,9 @@ class Point3D(PointND):
         >>> print p
         (5.0, 7.0, -2.0)
         """
-        pass
+        self.x = x
+        self.y = y
+        self.z = z
 
 if __name__ == '__main__':
     import doctest

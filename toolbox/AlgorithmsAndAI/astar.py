@@ -57,8 +57,13 @@ class GridWorld():
             return False
 
     def _add_swamp(self, mouse_pos):
-        #insert swamp code here.
-        pass
+        swamp_coord = (mouse_pos[0]/50, mouse_pos[1]/50)
+        if self._is_occupied(swamp_coord):
+            if self.actors[swamp_coord].unremovable == False:
+                self.actors.pop(swamp_coord, None)
+        else:
+            self.actors[swamp_coord] = ObstacleTile( swamp_coord, self, './images/swamp.jpg', is_unpassable = False, terrain_cost = 3)
+
 
     def _add_lava(self, mouse_pos):
         lava_coord = (mouse_pos[0]/50, mouse_pos[1]/50)
@@ -91,14 +96,16 @@ class GridWorld():
                 elif event.type is pygame.MOUSEBUTTONDOWN:
                     if self.add_tile_type == 'lava':
                         self._add_lava(event.pos)
-                    #insert swamp code here
+                    elif self.add_tile_type == 'swamp':
+                        self._add_swamp(event.pos)
                 elif event.type is pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
                         self.paul.run_astar(self.cake.cell_coordinates, self)
                         self.paul.get_path()
                     elif event.key == pygame.K_l:
                         self.add_tile_type = 'lava'
-                    #insert swamp code here
+                    elif event.key == pygame.K_s:
+                        self.add_tile_type = 'swamp'
 
 class Actor(object):
     def __init__(self, cell_coordinates, world, image_loc, unremovable = False, is_obstacle = True):
@@ -139,6 +146,7 @@ class Cell():
     def f_cost(self):
         if self.g_cost is None or self.h_cost is None:
             return None
+        
         return self.g_cost + self.h_cost
 
     def draw(self):
@@ -167,8 +175,8 @@ class Paul(Actor):
     def get_open_adj_coords(self, coords):
         """returns list of valid coords that are adjacent to the argument, open, and not in the closed list."""
         #modify directions and costs as needed
-        directions = [(1,0),(0,1),(-1,0),(0,-1)]
-        costs = [1,1,1,1]
+        directions = [(1,0),(0,1),(-1,0),(0,-1),(1,1),(-1,1),(-1,-1),(1,-1),(2,0),(0,2),(-2,0),(0,-2),(2,2),(-2,2),(-2,-2),(2,-2)]
+        costs = [1,1,1,1,3,3,3,3,8,8,8,8,8,8,8,8]
         adj_coords = map(lambda d: self.world._add_coords(coords,d), directions)
         for i, coord in enumerate(adj_coords):
             costs[i] += self.world.get_terrain_cost(coord)
@@ -195,6 +203,7 @@ class Paul(Actor):
         """Follows cell parents backwards until the initial cell is reached to create a path, which is the list of coordinates that paul will travel through to reach the destination."""
         coord_list = [self.destination_coord]
         print "final cost is", self.cells[coord_list[-1]].f_cost
+
         while self.start_coord not in coord_list:
             try:
                 coord_list.append(self.cells[coord_list[-1]].parents_coords)
