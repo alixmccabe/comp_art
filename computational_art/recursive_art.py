@@ -5,6 +5,18 @@ Author: ALIX McCABE
 import random
 from PIL import Image
 
+"""Amazing job. Like I said to you in person, I'm super impressed with how much
+you documented all your functions, commented cases in your code, split things up as much as possible, 
+and even went beyond in your own quirky way with the file names. Love it. 
+
+Only area for improvement - create tests for your functions!
+I don't see too many added doctests.
+
+Also...be careful with your git repo organization. You have gene_finder, facebook, and everything
+all under this repo titled "comp_art". I feel like you may feel scared to use git as much as you should,
+and don't be - it can be really helpful. Get into the habit of committing and
+pushing as often as possible, and keep your git organized.
+- it'll let you go back to older versions super easily.""
 
 def build_random_function(min_depth, max_depth):
     """ Builds a random function of depth at least min_depth and depth
